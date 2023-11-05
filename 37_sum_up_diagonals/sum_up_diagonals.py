@@ -18,3 +18,17 @@ def sum_up_diagonals(matrix):
         >>> sum_up_diagonals(m2)
         30
     """
+    # Calculate the size of the matrix
+    size = len(matrix)
+
+    # Initialize variables to store the sums of the two diagonals
+    diagonal1_sum = 0
+    diagonal2_sum = 0
+
+    # Iterate through the rows and columns
+    for i in range(size):
+        diagonal1_sum += matrix[i][i]         # Sum along the top-left to bottom-right diagonal
+        diagonal2_sum += matrix[i][size - 1 - i]  # Sum along the bottom-left to top-right diagonal
+
+    # Return the sum of both diagonals
+    return diagonal1_sum + diagonal2_sum

@@ -11,3 +11,23 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    # Create a dictionary to store the count of each number
+    num_count = {}
+
+    # Iterate through the list and count occurrences
+    for num in nums:
+        if num in num_count:
+            num_count[num] += 1
+        else:
+            num_count[num] = 1
+
+    # Find the mode by iterating through the dictionary
+    mode_value = None
+    max_count = 0
+
+    for num, count in num_count.items():
+        if count > max_count:
+            max_count = count
+            mode_value = num
+
+    return mode_value

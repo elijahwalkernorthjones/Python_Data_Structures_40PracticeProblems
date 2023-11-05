@@ -23,3 +23,14 @@ def sum_range(nums, start=0, end=None):
         >>> sum_range(nums, 1, 99)
         9
     """
+    sum = 0
+
+    # Determine the starting and ending indices based on the parameters
+    start_idx = nums.index(start) if start in nums else 0
+    end_idx = nums.index(end) if end in nums else len(nums)
+
+    # Iterate through the list and calculate the sum
+    for i in range(start_idx, end_idx):
+        sum += nums[i]
+
+    return sum
